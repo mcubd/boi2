@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F0F1F3;
+            user-select: none;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            justify-content: center;
+            padding-bottom: 1.5rem;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 15px;
+            font-weight: 400;
+
+
+        }
+
+        .main>* {
+            background-color: #FFFFFF;
+            /* Apply background color to the content */
+            width: calc(100% - 30px);
+            /* Subtract 15px from left and right */
+            padding-left: 15px;
+            padding-right: 15px;
+            /* box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1),0 -54px 8px rgba(0, 0, 0, 0.1),4px 0 8px rgba(0, 0, 0, 0.1); */
+
+
+        }
+
+        #price {
+            /* box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1); */
+        }
+
+        .main img {
+            /* box-shadow: 0 -9px 8px rgba(0, 0, 0, 0.1); */
+            padding-top: 20px;
+
+            box-shadow: -3px 5px 5px rgba(0, 0, 0, 0.15), 3px 5px 5px rgba(0, 0, 0, 0.15), 0px -10px 10px rgba(0, 0, 0, 0.2);
+
+
+            /* box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1),-4px 0 8px rgba(0, 0, 0, 0.3); */
+        }
+
+        .main span,
+        hr {
+            box-shadow: -3px 5px 5px rgba(0, 0, 0, 0.15), 3px 5px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .h11 {
+            text-align: center;
+            margin-top: 15px;
+
+        }
+
+        .h1 {
+            text-align: center;
+            padding-top: 18px;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            display: inline;
+            color: #0397d3;
+            margin-left: 3px;
+        }
+
+        #price {
+            text-align: center;
+            padding-top: 8px;
+
+            padding-bottom: 26px;
+        }
+
+        .cart {
+            width: 100%;
+            height: 90px;
+            background-color: white;
+            position: fixed;
+            bottom: 0;
+            box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+        }
+
+        .btn {
+            width: 92%;
+            height: 70px;
+            background-color: #0071E3;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+        }
+
+
+        #h3 {
+            display: flex;
+            align-items: center;
+            /* Vertically align text with the image */
+            margin: 0;
+            /* Remove default margin */
+        }
+
+        #h3 img {
+            margin-right: 10px;
+            /* Space between the image and text */
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+
+<body>
+
+
+  
+
+    <div id="main0" class="main0">
+
+    </div>
+
+
+    <div class="cart">
+
+        <div class="btn" onclick="cart()">
+            <h3 id="h3"> <img src="https://www.rokomari.com/static/200/images/cart-info.png" alt=""> Add to Cart</h3>
+        </div>
+    </div>
+
+ 
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+
+        import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs, getDoc, where, setDoc, Timestamp, updateDoc, doc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+
+
+
+        const firebaseConfig1 = {
+            apiKey: "AIzaSyBzaFL1XOU-_152duOo0baL1DfgVVuSwMI",
+            authDomain: "test2-5bbd8.firebaseapp.com",
+            databaseURL: "https://test2-5bbd8-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "test2-5bbd8",
+            storageBucket: "test2-5bbd8.appspot.com",
+            messagingSenderId: "683307239625",
+            appId: "1:683307239625:web:d28ed1c2fb6b31dd4e6518"
+        };
+
+
+        const app1 = initializeApp(firebaseConfig1);
+
+
+        const firestore = getFirestore(app1);
+
+
+
+        window.book = async function () {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Retrieve the 'id' query parameter
+            const id = urlParams.get('id');
+
+            const usersRef = collection(firestore, "boiList");
+
+            // Document reference
+            const docRef = doc(usersRef, id);
+
+            // Get the document
+            const doc3 = await getDoc(docRef);
+
+            if (doc3.exists()) {
+                // Document exists, retrieve data
+                console.log(doc3.data());
+                let data = doc3.data()
+
+
+                let node = document.createElement('div')
+
+                node.setAttribute('class', 'main')
+                node.innerHTML = `
+ 
+        <img src=${data.img} width="300px" height="auto" alt="">
+        <span><h1 class="h11">${data.title}</h1> </span>
+        <span class="h1"> by <h2>${data.author}</h2> </span>
+        <hr>
+        <span id="price"><h1>  ${data.price}</h1></span>
+    
+
+    
+    `
+
+
+                let ul = document.getElementById("main0");
+                ul.appendChild(node);
+
+
+
+
+
+
+
+
+
+            } else {
+                // Document does not exist
+                console.log('No such document!');
+                alert("Book sold OUt")
+            }
+        };
+        book()
+
+
+        window.cart = async function () {
+            // alert(4)
+            // const usersRef = collection(firestore, "boiUser");
+            //         const q = query(usersRef, where("gmail", "==", gmail));
+            //         const querySnapshot = await getDocs(q);
+
+            if (getCookie("boiEmail") != undefined) {
+                const usersRef = collection(firestore, "boiUser");
+                const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
+                const querySnapshot = await getDocs(q);
+                const userDoc = querySnapshot.docs[0];
+                console.log(userDoc.data())
+
+
+                const userRef = doc(firestore, "boiUser", userDoc.id);
+
+                const urlParams = new URLSearchParams(window.location.search);
+
+// Retrieve the 'id' query parameter
+const id = urlParams.get('id');
+                const currentData = userDoc.data().cart || [];
+                currentData.push(id);
+
+
+                await updateDoc(userRef, {
+                    "cart": currentData  // Add new status value to the array
+                });
+
+
+
+
+            } else {
+                alert("Log in plz")
+            }
+
+        }
+
+
+
+        window.getCookie = function (name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        // Retrieve the values
+        console.log(getCookie("boiEmail")); // Outputs: Zayn
+
+    </script>
+</body>
+
+</html>
