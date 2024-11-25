@@ -1,13 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(43, 43, 43);
+            color: rgb(3, 64, 117);
+            padding: 0;
+            margin: 0;
+        }
+
+        .top {
+
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin-left: 20px;
+            margin-top: 40px;
+        }
+
+        .r {
+            display: flex;
+            /* Flexbox for input and button alignment */
+            align-items: center;
+            margin-left: auto;
+            margin-right: 10px;
+
+
+
+        }
+
+        .r span {
+            margin-left: 4px;
+        }
+
+        .imgg {
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 25%;
+        }
+
+        .txt {
+
+            display: flex;
+           
+            flex-direction: column;
+             width: 50%;
+        }
+ 
+.count0{
+    width: 37px;
+    height: 40px;
+    
+    border: 1px solid #ced4da;
+    border-bottom: none;
+    border-top: none;
+    display: flex; /* Use flexbox for centering */
+      justify-content: center; /* Center horizontally */
+      align-items: center;
+    
+}
+
+.count{
+    width: 37px;
+    height: 40px;
+    
+    border: 1px solid #dee2e6;
+    display: flex; /* Use flexbox for centering */
+      justify-content: center; /* Center horizontally */
+      align-items: center;
+}
+
+.mid{
+
+    background-color: #FFFFFF;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.mid2{
+
+background-color: #F8F9FA;
+color: black;
+padding-top: 10px;
+padding-bottom: 10px;
+display: flex; /* Use flexbox for centering */
+border: 1px solid #ced4da;
+ 
+}
+
+#det{
+    margin-left: 25%;
+    justify-content: center;
+    align-items: center;
+}
+#qty2{
+    margin-left: auto;
+    margin-right: 30px;
+}
+.box{
+    display: flex;
+ 
+flex-direction: column;
+align-items: center; /* Vertically centers the content */
+ justify-content: space-between;   /* Horizontally centers the content */
+
+
+ 
+}
+
+.box2{
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+ 
+    border: 1px solid #ced4da;
+    border-top: none;
+    padding-bottom: 18px;
+ 
+
+
+}
+.txt{
+    margin: 0;
+    padding: 0;
+
+ 
+word-break: break-word;
+
+ 
+
+    
+}
+.imgg img{
+    padding-bottom: 10px;
+}
+.counts{
+    margin-left: auto;
+    margin-right: 24px;
+}
+.book{
+    color: #609;
+    font-size: 1.25rem;
+font-weight: 700;
+
+}
+.tk{
+    font-weight: 700;
+
+
+    font-size: 20px;
+}
+
+    </style>
 </head>
+
 <body>
 
 
+
+
+    <div class="top">
+
+        <img src="https://eboighar.com/frontend/assets/images/svg/cart-books-150x150.svg" height="64px" alt="">
+        <div class="r">
+            <span> Qty:</span>
+            <span id="qt">0</span>
+            <span>Tk.</span>
+            <span id="price">0</span>
+        </div>
+    </div>
+
+
+    <div class="mid">
+
+        <div class="mid2">
+            <span id="det">  Details </span>
+            <span id="qty2">Qty</span>
+        </div>
+
+        <div class="box">
+            <div class="box2"> 
+
+            <div class="imgg">
+                <img src="https://static1.eboighar.com/thumbimages//small_thumb_books/book_66602022-11-30_1669792050.jpeg"
+                    alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#034075" class="bi bi-x-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                      </svg>
+            </div>
+            <div class="txt">
+                <span>Book1 </span>
+                <span> Author1</span>
+                <span>unit100 </span>
+                <span>100 </span>
+
+
+
+
+            </div>
+
+            <div class="counts">
+                <div class="minus count">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#63AEFF" class="bi bi-dash-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                      </svg>
+                </div>
+<div class="num count0"></div>
+<div class="plus count">
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1083FF" class="bi bi-plus-square" viewBox="0 0 16 16">
+        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+      </svg>
+</div>
+
+            </div>
+
+        </div>
+
+
+        <div class="box2"> 
+            <div class="imgg">
+                <img height="71px" src="https://d25swln94uq8y4.cloudfront.net/media/book_th/eb002603.jpg"
+                    alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#034075" class="bi bi-x-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                      </svg>
+            </div>
+            <div class="txt">
+                <span class="book">Book1bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb </span>
+                <span> Author1</span>
+                <span>unit100 </span>
+                <span class="tk">100 </span>
+
+
+
+
+            </div>
+
+            <div class="counts">
+                <div class="minus count">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#63AEFF" class="bi bi-dash-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                      </svg>
+                </div>
+<div class="num count0"></div>
+<div class="plus count">
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1083FF" class="bi bi-plus-square" viewBox="0 0 16 16">
+        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+      </svg>
+</div>
+
+            </div>
+
+        </div>
+
+
+
+        </div>
+
+    </div>
 
 
 
@@ -38,8 +303,82 @@
 
 
 
+        window.getCookie = function (name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        window.addUser = async function () {
+            let gmail = getCookie("boiEmail")
+            if (gmail == undefined) {
+                return true;
+            }
+            console.log(gmail)
+
+            const usersRef = collection(firestore, "boiUser");
+            const q = query(usersRef, where("gmail", "==", gmail));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.size == 1) {
+
+                if (querySnapshot.docs[0].data().cart != undefined && querySnapshot.docs[0].data().cart.length != 0) {
+
+
+                    console.log(querySnapshot.docs[0].data().cart)
+                    document.getElementById("qt").innerText = querySnapshot.docs[0].data().cart.length
+
+                    let idArray = querySnapshot.docs[0].data().cart;
+                    let mrp = 0;
+
+                    for (const id of idArray) {
+                        const usersRef = collection(firestore, "boiList");
+
+                        // Document reference
+                        const docRef = doc(usersRef, id);
+
+                        // Get the document
+                        const doc3 = await getDoc(docRef);
+
+                        if (doc3.exists()) {
+                            // Document exists, retrieve data
+                            console.log(doc3.data().price);
+                            let price = doc3.data().price;
+
+                            const numbers = price.match(/\d+/g).join(""); // Extracts numbers and joins them
+
+                            mrp = Number(mrp) + Number(numbers);
+
+
+
+                        }
+                    }
+                    console.log(mrp)
+                    document.getElementById("price").innerText = mrp;
+
+
+                }
+
+                //     const docRef = await addDoc(collection(firestore, "boiUser"), {
+                //         gmail: String(gmail),
+                //         img: String(img),
+                //         name: String(name),
+                //         date: Timestamp.now()
+                //     });
+                //     location.reload();
+
+            } else {
+                //     location.reload();
+
+            }
+        }
+        addUser()
+
+
+
 
     </script>
-    
+
 </body>
+
 </html>
