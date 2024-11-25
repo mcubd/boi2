@@ -48,119 +48,234 @@
         .txt {
 
             display: flex;
-           
+
             flex-direction: column;
-             width: 50%;
+            width: 50%;
         }
- 
-.count0{
-    width: 37px;
-    height: 40px;
-    
-    border: 1px solid #ced4da;
-    border-bottom: none;
-    border-top: none;
-    display: flex; /* Use flexbox for centering */
-      justify-content: center; /* Center horizontally */
-      align-items: center;
-    
-}
 
-.count{
-    width: 37px;
-    height: 40px;
-    
-    border: 1px solid #dee2e6;
-    display: flex; /* Use flexbox for centering */
-      justify-content: center; /* Center horizontally */
-      align-items: center;
-}
+        .count0 {
+            width: 37px;
+            height: 40px;
 
-.mid{
+            border: 1px solid #ced4da;
+            border-bottom: none;
+            border-top: none;
+            display: flex;
+            /* Use flexbox for centering */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
 
-    background-color: #FFFFFF;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-.mid2{
+        }
 
-background-color: #F8F9FA;
-color: black;
-padding-top: 10px;
-padding-bottom: 10px;
-display: flex; 
-border: 1px solid #ced4da;
- 
-} 
+        .count {
+            width: 37px;
+            height: 40px;
 
-#det{
-    margin-left: 25%;
-    justify-content: center;
-    align-items: center;
-}
-#qty2{
-    margin-left: auto;
-    margin-right: 30px;
-}
-.box{
-    display: flex;
- 
-flex-direction: column;
-align-items: center; /* Vertically centers the content */
- justify-content: space-between;   /* Horizontally centers the content */
+            border: 1px solid #dee2e6;
+            display: flex;
+            /* Use flexbox for centering */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+        }
 
+        .mid {
 
- 
-}
+            background-color: #FFFFFF;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
 
-.box2{
-    display: flex;
-    margin-top: 10px;
-    width: 100%;
- 
-    border: 1px solid #ced4da;
-    border-top: none;
-    padding-bottom: 18px;
- 
+        .mid2 {
+
+            background-color: #F8F9FA;
+            color: black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            border: 1px solid #ced4da;
+
+        }
+
+        #det {
+            margin-left: 25%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #qty2 {
+            margin-left: auto;
+            margin-right: 30px;
+        }
+
+        .box {
+            display: flex;
+
+            flex-direction: column;
+            align-items: center;
+            /* Vertically centers the content */
+            justify-content: space-between;
+            /* Horizontally centers the content */
 
 
-}
-.txt{
-    margin: 0;
-    padding: 0;
 
- 
-word-break: break-word;
+        }
 
- 
+        .box2 {
+            display: flex;
+            margin-top: 10px;
+            width: 100%;
 
-    
-}
-.imgg img{
-    padding-bottom: 10px;
-}
-.counts{
-    margin-left: auto;
-    margin-right: 24px;
-}
-.book{
-    color: #609;
-    font-size: 1.25rem;
-font-weight: 700;
-
-}
-.tk{
-    font-weight: 700;
+            border: 1px solid #ced4da;
+            border-top: none;
+            padding-bottom: 18px;
 
 
-    font-size: 20px;
-}
 
+        }
+
+        .txt {
+            margin: 0;
+            padding: 0;
+
+
+            word-break: break-word;
+
+
+
+
+        }
+
+        .imgg img {
+            padding-bottom: 10px;
+        }
+
+        .counts {
+            margin-left: auto;
+            margin-right: 24px;
+        }
+
+        .book {
+            color: #609;
+            font-size: 1.25rem;
+            font-weight: 700;
+
+        }
+
+        .tk {
+            font-weight: 700;
+
+
+            font-size: 20px;
+        }
+
+
+
+
+        .material-progress {
+            position: relative;
+            height: 6px;
+            display: block;
+            width: 100%;
+            background-color: #acece6;
+            border-radius: 2px;
+            margin: .5rem 0 1rem 0;
+            overflow: hidden;
+
+        }
+
+
+
+
+
+
+
+
+        .material-progress .indeterminate:before {
+            content: '';
+            position: absolute;
+            background-color: inherit;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            will-change: left, right;
+            -webkit-animation: indeterminate 2.1s cubic-bezier(.65, .815, .735, .395) infinite;
+            animation: indeterminate 2.1s cubic-bezier(.65, .815, .735, .395) infinite
+        }
+
+        .material-progress .indeterminate:after {
+            content: '';
+            position: absolute;
+            background-color: inherit;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            will-change: left, right;
+            -webkit-animation: indeterminate-short 2.1s cubic-bezier(.165, .84, .44, 1) infinite;
+            animation: indeterminate-short 2.1s cubic-bezier(.165, .84, .44, 1) infinite;
+            -webkit-animation-delay: 1.15s;
+            animation-delay: 1.15s
+        }
+
+        .material-progress {
+            position: fixed;
+            height: 6px;
+            display: block;
+            width: 100%;
+            background-color: #acece6;
+            border-radius: 2px;
+            margin: .5rem 0 1rem 0;
+            overflow: hidden
+        }
+
+        .indeterminate {
+            background-color: #28a745 !important
+        }
+
+
+        @keyframes indeterminate {
+            0% {
+                left: -35%;
+                right: 100%
+            }
+
+            60% {
+                left: 100%;
+                right: -90%
+            }
+
+            100% {
+                left: 100%;
+                right: -90%
+            }
+        }
+
+        @keyframes indeterminate-short {
+            0% {
+                left: -200%;
+                right: 100%
+            }
+
+            60% {
+                left: 107%;
+                right: -8%
+            }
+
+            100% {
+                left: 107%;
+                right: -8%
+            }
+        }
     </style>
 </head>
 
 <body>
 
+
+    <div id="bar" class="material-progress position-fixed" style="top: -8px; left: 0px; z-index: 1050;">
+        <div class="indeterminate bg-success"></div>
+    </div>
 
 
 
@@ -179,94 +294,63 @@ font-weight: 700;
     <div class="mid">
 
         <div class="mid2">
-            <span id="det">  Details </span>
+            <span id="det"> Details </span>
             <span id="qty2">Qty</span>
         </div>
 
-        <div class="box">
-            <div class="box2"> 
+        <div id="box" class="box">
+            <!-- <div class="box2">
 
-            <div class="imgg">
-                <img src="https://static1.eboighar.com/thumbimages//small_thumb_books/book_66602022-11-30_1669792050.jpeg"
-                    alt="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#034075" class="bi bi-x-square" viewBox="0 0 16 16">
-                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                      </svg>
-            </div>
-            <div class="txt">
-                <span>Book1 </span>
-                <span> Author1</span>
-                <span>unit100 </span>
-                <span>100 </span>
-
-
-
-
-            </div>
-
-            <div class="counts">
-                <div class="minus count">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#63AEFF" class="bi bi-dash-square" viewBox="0 0 16 16">
-                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
-                      </svg>
+                <div class="imgg">
+                    <img src="https://static1.eboighar.com/thumbimages//small_thumb_books/book_66602022-11-30_1669792050.jpeg"
+                        alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#034075" class="bi bi-x-square"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                    </svg>
                 </div>
-<div class="num count0"></div>
-<div class="plus count">
-
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1083FF" class="bi bi-plus-square" viewBox="0 0 16 16">
-        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-      </svg>
-</div>
-
-            </div>
-
-        </div>
-
-
-        <div class="box2"> 
-            <div class="imgg">
-                <img height="71px" src="https://d25swln94uq8y4.cloudfront.net/media/book_th/eb002603.jpg"
-                    alt="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#034075" class="bi bi-x-square" viewBox="0 0 16 16">
-                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                      </svg>
-            </div>
-            <div class="txt">
-                <span class="book">Book1bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb </span>
-                <span> Author1</span>
-                <span>unit100 </span>
-                <span class="tk">100 </span>
+                <div class="txt">
+                    <span>Book1 </span>
+                    <span> Author1</span>
+                    <span>unit100 </span>
+                    <span>100 </span>
 
 
 
 
-            </div>
-
-            <div class="counts">
-                <div class="minus count">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#63AEFF" class="bi bi-dash-square" viewBox="0 0 16 16">
-                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
-                      </svg>
                 </div>
-<div class="num count0"></div>
-<div class="plus count">
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1083FF" class="bi bi-plus-square" viewBox="0 0 16 16">
-        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-      </svg>
-</div>
+                <div class="counts">
+                    <div class="minus count">
 
-            </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#63AEFF"
+                            class="bi bi-dash-square" viewBox="0 0 16 16">
+                            <path
+                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
+                        </svg>
+                    </div>
+                    <div class="num count0"></div>
+                    <div class="plus count">
 
-        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1083FF"
+                            class="bi bi-plus-square" viewBox="0 0 16 16">
+                            <path
+                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                            <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                        </svg>
+                    </div>
+
+                </div>
+
+            </div> -->
+
+
+
 
 
 
@@ -300,6 +384,32 @@ font-weight: 700;
         const firestore = getFirestore(app1);
 
 
+        document.getElementById("bar").style.display = "none"
+        window.hasdup = function (arr, str) {
+            return arr.filter(item => item === str).length > 1;
+        };
+
+
+
+        window.findDuplicates = function (arr) {
+            const count = {};
+            const duplicates = [];
+
+            // Count occurrences of each item
+            arr.forEach(item => {
+                count[item] = (count[item] || 0) + 1;
+            });
+
+            // Filter out items that appear more than once
+            for (let item in count) {
+                if (count[item] > 1) {
+                    duplicates.push({ item, count: count[item] });
+                }
+            }
+
+            return duplicates;
+        }
+
 
 
 
@@ -329,9 +439,24 @@ font-weight: 700;
                     document.getElementById("qt").innerText = querySnapshot.docs[0].data().cart.length
 
                     let idArray = querySnapshot.docs[0].data().cart;
+                    let nodupli = [...new Set(idArray)];
+
                     let mrp = 0;
 
-                    for (const id of idArray) {
+
+
+                    const result = findDuplicates(idArray);
+                    console.warn(result);
+                    const keysArray = result.map(obj => obj.item);
+
+                    console.log(keysArray);
+
+
+                    for (const id of nodupli) {
+
+                        let count2 = 1;
+
+
                         const usersRef = collection(firestore, "boiList");
 
                         // Document reference
@@ -346,8 +471,72 @@ font-weight: 700;
                             let price = doc3.data().price;
 
                             const numbers = price.match(/\d+/g).join(""); // Extracts numbers and joins them
+                            let total = price;
+                            let clr = "#63AEFF";
+
+
+                            if (keysArray.includes(id)) {
+                                const count = idArray.filter(item => item === id).length;
+                                console.log(id);
+                                count2 = count;
+                                total = Number(price) * Number(count);
+                                clr = "#1083FF";
+
+                            }
+
 
                             mrp = Number(mrp) + Number(numbers);
+
+                            let node = document.createElement('div')
+                            node.innerHTML = `
+            <div  id2=${id} class="imgg">
+                <img height="71px" src=${doc3.data().img}
+                    alt="">
+                    <svg onclick="cut(event)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#034075" class="bi bi-x-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                      </svg>
+            </div>
+            <div class="txt">
+                <span class="book">${doc3.data().title} </span>
+                <span> ${doc3.data().author}</span>
+                <span class="pri0">Unit price: Tk.<span class="pri"> ${doc3.data().price}</span> </span>
+                <span class="tk0"> Tk. <span class="tk"> ${total} </span> </span>
+
+
+
+
+            </div>
+
+            <div class="counts">
+                <div  id2=${id} onclick="minus(event)" class="minus count">
+
+                    <svg    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=${clr} class="bi bi-dash-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                      </svg>
+                </div>
+<div class="num count0">${count2}</div>
+<div id2=${id} onclick="plus(event)" class="plus count">
+
+    <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1083FF" class="bi bi-plus-square" viewBox="0 0 16 16">
+        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+      </svg>
+</div>
+
+            </div>
+    `;
+
+                            node.setAttribute('class', 'box2')
+                            node.setAttribute('id', id)
+
+                            let ul = document.getElementById("box");
+                            ul.appendChild(node);
+
+
+
+
 
 
 
@@ -359,20 +548,214 @@ font-weight: 700;
 
                 }
 
-                //     const docRef = await addDoc(collection(firestore, "boiUser"), {
-                //         gmail: String(gmail),
-                //         img: String(img),
-                //         name: String(name),
-                //         date: Timestamp.now()
-                //     });
-                //     location.reload();
+
 
             } else {
-                //     location.reload();
 
             }
         }
         addUser()
+
+        window.plus = async function (e) {
+            document.getElementById("bar").style.display = ""
+
+
+
+
+
+            let el = e.target.closest(".count");
+            let id2 = el.getAttribute('id2');
+
+            if (getCookie("boiEmail") != undefined) {
+                const usersRef = collection(firestore, "boiUser");
+                const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
+                const querySnapshot = await getDocs(q);
+                const userDoc = querySnapshot.docs[0];
+                console.log(userDoc.data())
+
+
+                const userRef = doc(firestore, "boiUser", userDoc.id);
+
+
+
+                const currentData = userDoc.data().cart || [];
+                currentData.push(id2);
+
+
+                await updateDoc(userRef, {
+                    "cart": currentData
+                });
+
+                let updatedDoc = await getDoc(userRef);
+                let cart = updatedDoc.data().cart;
+
+                let count2 = cart.filter(item => item === id2).length;
+
+
+
+
+                document.getElementById("bar").style.display = "none"
+
+                let el4 = e.target.closest(".counts");
+                let box2 = e.target.closest(".box2");
+                console.log(updatedDoc.data());
+
+                update(box2, count2, "no")
+
+
+
+            }
+
+        }
+
+        window.update = async function (el, count, fully) {
+
+            let ell = el.querySelectorAll('.txt')[0].querySelectorAll('.tk0')[0].querySelectorAll('.tk')[0];
+            let pri1 = el.querySelectorAll('.txt')[0].querySelectorAll('.pri0')[0].querySelectorAll('.pri')[0].innerText;
+            ell.innerText = Number(count) * Number(pri1);
+
+
+
+            let el3 = el.querySelectorAll('.counts')[0];
+            let childElements = el3.querySelectorAll('.num');
+            console.warn(childElements);
+            childElements.forEach(function (element) {
+                element.innerText = count;
+            });
+
+        };
+
+        window.minus = async function (e) {
+
+            let el = e.target.closest(".count");
+            let id2 = el.getAttribute('id2');
+
+            let one = e.target.closest(".box2").querySelectorAll('.counts')[0].querySelectorAll('.count0')[0].innerText;
+
+            console.log(one);
+            if (Number(one) > 1) {
+                document.getElementById("bar").style.display = ""
+            }
+
+            if (getCookie("boiEmail") != undefined) {
+                const usersRef = collection(firestore, "boiUser");
+                const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
+                const querySnapshot = await getDocs(q);
+                const userDoc = querySnapshot.docs[0];
+                console.log(userDoc.data())
+
+
+                const userRef = doc(firestore, "boiUser", userDoc.id);
+
+
+
+                const currentData = userDoc.data().cart || [];
+                //currentData.push(id2);
+                console.log(currentData);
+
+                let found = false;
+                let result = currentData.filter(num => {
+                    if (num == id2 && !found) {
+                        found = true;
+                        return false;
+                    }
+                    return true;
+                });
+
+                console.warn(result);
+                console.log(hasdup(currentData, id2));
+                if (hasdup(currentData, id2)) {
+
+                    await updateDoc(userRef, {
+                        "cart": result
+                    });
+
+
+                    let updatedDoc = await getDoc(userRef);
+
+
+                    let cart = updatedDoc.data().cart;
+                    let count2 = cart.filter(item => item === id2).length;
+                    document.getElementById("bar").style.display = "none"
+                    let box2 = e.target.closest(".box2");
+                    update(box2, count2, "no");
+
+
+                }
+
+
+
+
+
+
+
+            }
+
+        }
+
+
+
+
+
+        window.cut = async function (e) {
+
+
+
+ 
+            document.getElementById("bar").style.display = ""
+            let el = e.target.closest(".imgg");
+            let id2 = el.getAttribute('id2');
+
+
+            if (getCookie("boiEmail") != undefined) {
+                const usersRef = collection(firestore, "boiUser");
+                const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
+                const querySnapshot = await getDocs(q);
+                const userDoc = querySnapshot.docs[0];
+
+
+
+                const userRef = doc(firestore, "boiUser", userDoc.id);
+
+
+
+                const currentData = userDoc.data().cart || [];
+                //currentData.push(id2);
+                console.log(currentData);
+
+
+
+                let result = currentData.filter(item => item !== id2);
+
+                console.log(result);
+
+
+
+                await updateDoc(userRef, {
+                    "cart": result
+                });
+                let box2 = e.target.closest(".box2");
+            let box=document.getElementById("box")
+            box.removeChild(box2);
+                document.getElementById("bar").style.display = "none"
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+        };
+
+
+
 
 
 
