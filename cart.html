@@ -8,7 +8,7 @@
     <style>
         body {
             background-color: #EEEEEE;
-            
+            overflow-x: hidden; 
             padding: 0;
             margin: 0;
         }
@@ -145,7 +145,8 @@
 
         }
 
-        .tk,.tk0 {
+        .tk,
+        .tk0 {
             font-weight: 700;
 
 
@@ -281,7 +282,7 @@
             justify-content: center;
             font-weight: 500;
             font-size: 1.5rem;
-            
+
 
 
         }
@@ -289,19 +290,307 @@
         body {
             overflow-x: hidden;
         }
-        #qt, #price{
-            color:#007bff!important ;
+
+        #qt,
+        #price {
+            color: #007bff !important;
         }
-        .r0{
+
+        .r0 {
             color: black;
         }
-        .book{
+
+        .book {
             margin-bottom: 6px;
         }
+    </style>
+
+
+    <style>
+        header {
+            background-color: #25A8D6;
+            width: 100%;
+            position: sticky;
+            display: flex;
+            flex-direction: column;
+            /* Stack items vertically */
+            align-items: flex-start;
+            position: sticky;
+            top: 0;
+            z-index: 6;
+
+
+            /* box-shadow: 0px 1px 13px 1px rgba(204, 204, 204, 0.384); */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            /* Adjust shadow strength and spread */
+
+
+
+        }
+
+        @media (min-width: 1024px) {
+            header {
+                height: 78px;
+            }
+        }
+
+        @media (max-aspect-ratio: 1/1) {
+            header {
+                height: 68px;
+            }
+        }
+
+        #title0 {
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        input {
+            width: 100%;
+            height: 52px;
+
+
+            background-color: #F1F2F4;
+            outline: none;
+            /* Removes the outline */
+            border: none;
+            /* Optional: Removes the border if any */
+            box-shadow: none;
+            margin-left: 1.25rem;
+
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .logos {
+            display: flex;
+            /* Keep image and text on the same line */
+            align-items: center;
+            /* justify-content: space-between;   */
+            width: 100%;
+
+        }
+
+        .logos1 {
+            display: flex;
+            /* Keep image and text on the same line */
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+ 
+
+        #go {
+            /* background: linear-gradient(30deg,#4fd9ff 13.4%,#5fdbec 26.94%,#8ae3bc 54.25%,#c4ee7d 86.6%); */
+            background-color: transparent;
+            width: 3.5rem;
+            border-radius: .75rem;
+            justify-content: center;
+            align-items: center;
+            outline: none;
+            height: 48px;
+            outline: none;
+            /* Removes the outline */
+            border: none;
+            /* Optional: Removes the border if any */
+            box-shadow: none;
+        }
+
+        .login {
+
+            display: flex;
+            /* Flexbox for input and button alignment */
+            align-items: center;
+            /* Vertical alignment */
+            /* Set width of #input0 to 80% */
+            padding: 7px 10px;
+            background-color: #39b1dd;
+            /* margin: 0 auto; */
+            margin-left: auto;
+            border-radius: .75rem;
+            gap: 10px;
+            color: black;
+            margin-right: 10px;
+
+
+
+            /* margin-left: 40px; */
+        }
+
+        #dp {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+
+        .final{
+            margin-top: 30px;
+            padding-bottom:6.8rem;
+        }
+        .final span{
+             display: flex;
+             justify-content: center;
+             font-size: 26px;
+        }   
+        .box4{
+           
+            height: 60px;
+ 
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center;  
+        }
+        .box4 span{
+
+            height: 100%;
+            background-color: #FFC107;
+            text-align: center;
+            justify-content: center; /* Centers horizontally */
+            align-items: center;  
+ width: 90%;
+ border-radius: 8px;
+
+        }
+
+
+    </style>
+    <style>
+
+        .footer{
+            width: 100%;
+            height: 3.8rem;
+            background-color: rgb(255, 255, 255);
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center; /* Horizontally center the items */
+            align-items: center; 
+            box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
+
+
+
+        }
+        #hm,.cartt{
+width: 50%;
+justify-content: center;
+        }
+        .cartt {
+            display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#rd{
+    color: rgb(255 255 255);
+    font-weight: 700;
+ 
+background-color: rgb(255 78 99);
+ 
+
+ 
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: -10px; /* Adjusts overlap with the SVG */
+  margin-top: -5px;  /* Moves badge upwards */
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  z-index: 1; /* Ensures the badge is above the SVG */
+
+
+}
+ 
+
+#hm{
+    opacity: .7;
+    justify-content: center;
+    text-align: center;
+}
+
+
+body,html {
+            overflow-x: hidden;
+        }
+
+
     </style>
 </head>
 
 <body>
+
+
+    <header>
+
+        <div class="logos">
+            <a href="./1.html">
+
+            <div class="logos1">
+                <span>
+                    <img src="https://medeasy.health/assets/images/medEasyIcon.svg" alt="">
+                </span>
+                <span id="title0">
+                    MedEasy
+                </span>
+            </div>
+        </a>
+
+
+            <div id="login" class="login">
+
+                <svg id="svglogin" fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 481.5 481.5" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M0,240.7c0,7.5,6,13.5,13.5,13.5h326.1l-69.9,69.9c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4l93-93
+			c5.3-5.3,5.3-13.8,0-19.1l-93-93c-5.3-5.3-13.8-5.3-19.1,0c-5.3,5.3-5.3,13.8,0,19.1l69.9,69.9h-326C6,227.2,0,233.2,0,240.7z" />
+                            <path d="M382.4,0H99C44.4,0,0,44.4,0,99v58.2c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5V99c0-39.7,32.3-72,72-72h283.5
+			c39.7,0,72,32.3,72,72v283.5c0,39.7-32.3,72-72,72H99c-39.7,0-72-32.3-72-72V325c0-7.5-6-13.5-13.5-13.5S0,317.5,0,325v57.5
+			c0,54.6,44.4,99,99,99h283.5c54.6,0,99-44.4,99-99V99C481.4,44.4,437,0,382.4,0z" />
+                        </g>
+                    </g>
+                </svg>
+
+
+                <span id="txtlogin">Log in</span>
+                <img id="dp">
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+    <div class="footer">
+        
+        <svg id="hm" xmlns="http://www.w3.org/2000/svg" width="18px" height="20px" viewBox="0 0 17.996 20.442"><path d="M48.187,7.823,39.851.182A.7.7,0,0,0,38.9.2L31.03,7.841a.7.7,0,0,0-.211.5V19.311a.694.694,0,0,0,.694.694H37.3A.694.694,0,0,0,38,19.311V14.217h3.242v5.095a.694.694,0,0,0,.694.694h5.789a.694.694,0,0,0,.694-.694V8.335a.7.7,0,0,0-.228-.512ZM47.023,18.617h-4.4V13.522a.694.694,0,0,0-.694-.694H37.3a.694.694,0,0,0-.694.694v5.095H32.2V8.63l7.192-6.98L47.02,8.642v9.975Z" transform="translate(-30.619 0.236)" fill="#777777" stroke="currentColor" stroke-width="0.4"></path></svg> 
+
+        <div id="cartt00" class="cartt">
+            
+            <svg id="cartt0" width="32" height="32" viewBox="0 0 32 32" fill="none" class="text-opacity-100 brightness-0" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 11.67V10.7C11.5 8.45001 13.31 6.24001 15.56 6.03001C18.24 5.77001 20.5 7.88001 20.5 10.51V11.89" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12.9998 26H18.9998C23.0198 26 23.7398 24.39 23.9498 22.43L24.6998 16.43C24.9698 13.99 24.2698 12 19.9998 12H11.9998C7.72983 12 7.02983 13.99 7.29983 16.43L8.04983 22.43C8.25983 24.39 8.97983 26 12.9998 26Z" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.4955 16H19.5045" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12.4945 16H12.5035" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span id="rd">?</span>
+
+
+        </div>
+
+    </div>
+
 
 
     <div id="bar" class="material-progress position-fixed" style="top: -8px; left: 0px; z-index: 1050;">
@@ -316,7 +605,7 @@
         <div class="r">
             <span class="r0"> Qty</span>
             <span id="qt">0</span>
-            <span class="r0"> :  Tk.</span>
+            <span class="r0"> : Tk.</span>
             <span id="price">0</span>
         </div>
     </div>
@@ -330,60 +619,7 @@
         </div>
 
         <div id="box" class="box">
-            <!-- <div class="box2">
-
-                <div class="imgg">
-                    <img src="https://static1.eboighar.com/thumbimages//small_thumb_books/book_66602022-11-30_1669792050.jpeg"
-                        alt="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#034075" class="bi bi-x-square"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
-                        <path
-                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                    </svg>
-                </div>
-                <div class="txt">
-                    <span>Book1 </span>
-                    <span> Author1</span>
-                    <span>unit100 </span>
-                    <span>100 </span>
-
-
-
-
-                </div>
-
-                <div class="counts">
-                    <div class="minus count">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#63AEFF"
-                            class="bi bi-dash-square" viewBox="0 0 16 16">
-                            <path
-                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
-                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
-                        </svg>
-                    </div>
-                    <div class="num count0"></div>
-                    <div class="plus count">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1083FF"
-                            class="bi bi-plus-square" viewBox="0 0 16 16">
-                            <path
-                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
-                            <path
-                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
-                        </svg>
-                    </div>
-
-                </div>
-
-            </div> -->
-
-
-
-
-
+         
 
         </div>
 
@@ -391,11 +627,33 @@
 
 
 
+    <div class="final">
+
+        <span>Total = Tk.  <span id="ttl4"> </span></span>
+
+        <div class="box4">
+            <span>  Shipping & Payment</span>
+           
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById("hm").onclick = function () {
+            window.location.href = './1.html';
+        }
+    
+        document.getElementById("cartt00").onclick = function () {
+            window.location.href = './cart.html';
+    
+    }
+    </script>
+
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 
         import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs, getDoc, where, setDoc, Timestamp, updateDoc, doc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
-
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
 
         const firebaseConfig1 = {
@@ -410,9 +668,40 @@
 
 
         const app1 = initializeApp(firebaseConfig1);
+        const auth = getAuth(app1);
+        auth.languageCode = 'en';
+        const provider = new GoogleAuthProvider();
+
 
 
         const firestore = getFirestore(app1);
+
+
+
+
+        window.getCookie = function (name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+
+
+        if (getCookie("boiEmail") != undefined) {
+            document.getElementById('dp').src = getCookie("boiPic")
+            document.getElementById('svglogin').style.display = 'none';
+            document.getElementById('txtlogin').style.display = 'none';
+            document.getElementById('dp').style.display = '';
+
+        } else {
+            document.getElementById('svglogin').style.display = '';
+            document.getElementById('txtlogin').style.display = '';
+            document.getElementById('dp').style.display = 'none';
+        }
+
+
+
+
 
 
         document.getElementById("bar").style.display = "none"
@@ -444,11 +733,6 @@
 
 
 
-        window.getCookie = function (name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        }
 
         window.addUser = async function () {
             let gmail = getCookie("boiEmail")
@@ -468,7 +752,7 @@
 
                     console.log(querySnapshot.docs[0].data().cart)
                     document.getElementById("qt").innerText = querySnapshot.docs[0].data().cart.length
-
+                    document.getElementById("rd").innerText = querySnapshot.docs[0].data().cart.length
                     let idArray = querySnapshot.docs[0].data().cart;
                     let nodupli = [...new Set(idArray)];
 
@@ -527,7 +811,7 @@
                             }
 
 
-                           
+
 
                             let node = document.createElement('div')
                             node.innerHTML = `
@@ -584,22 +868,22 @@
 
                         }
                     }
-            
+
 
                     setTimeout(() => {
-                        let mrp =0;
+                        let mrp = 0;
                         let elementss = document.querySelectorAll('.tk');
-            
-            elementss.forEach(function (el) {
-                console.log(el);
-                
-                mrp=Number(mrp)+Number(el.innerText)
 
-            });
-            document.getElementById("price").innerText = mrp;
- 
+                        elementss.forEach(function (el) {
+                            console.log(el);
+
+                            mrp = Number(mrp) + Number(el.innerText)
+
+                        });
+                        document.getElementById("price").innerText = mrp;
+                        document.getElementById("ttl4").innerText = mrp;
                     }, 100);
-                    
+
 
 
                 }
@@ -614,7 +898,7 @@
 
         window.plus = async function (e) {
             document.getElementById("bar").style.display = ""
-            let box0=document.getElementById("box")
+            let box0 = document.getElementById("box")
             box.style.pointerEvents = 'none';
 
 
@@ -652,8 +936,9 @@
 
 
                 document.getElementById("qt").innerText = cart.length
+                
+            document.getElementById("rd").innerText = cart.length
 
-               
 
 
 
@@ -668,7 +953,7 @@
 
 
                 document.getElementById("bar").style.display = "none"
- 
+
 
                 let el4 = e.target.closest(".counts");
                 let box2 = e.target.closest(".box2");
@@ -680,14 +965,14 @@
 
                 if (Number(one) == 1) {
 
-                    
 
-                let minus0 = e.target.closest(".counts").querySelectorAll('.minus')[0];
-                let minus =minus0.querySelectorAll('svg')[0];
-                minus.setAttribute('fill', '#1083FF');
 
-                console.log(minus);
-            }
+                    let minus0 = e.target.closest(".counts").querySelectorAll('.minus')[0];
+                    let minus = minus0.querySelectorAll('svg')[0];
+                    minus.setAttribute('fill', '#1083FF');
+
+                    console.log(minus);
+                }
 
 
 
@@ -714,16 +999,20 @@
 
 
             let elementss = document.querySelectorAll('.tk');
-            let ttl=0;
-                elementss.forEach(function (el) {
-                    
-                    ttl=Number(ttl)+Number(el.innerText)
+            let ttl = 0;
+            elementss.forEach(function (el) {
 
-                });
-               document.getElementById("price").innerText=ttl
+                ttl = Number(ttl) + Number(el.innerText)
 
-               let box0=document.getElementById("box")
-               box.style.pointerEvents = '';
+            });
+            document.getElementById("price").innerText = ttl
+
+            let box0 = document.getElementById("box")
+            box.style.pointerEvents = '';
+
+
+
+
 
         };
 
@@ -737,7 +1026,7 @@
             console.log(one);
             if (Number(one) > 1) {
                 document.getElementById("bar").style.display = ""
-                let box0=document.getElementById("box")
+                let box0 = document.getElementById("box")
                 box.style.pointerEvents = 'none';
             }
 
@@ -782,6 +1071,8 @@
                     let cart = updatedDoc.data().cart;
 
                     document.getElementById("qt").innerText = cart.length
+                    document.getElementById("rd").innerText = cart.length
+
                     let count2 = cart.filter(item => item === id2).length;
                     document.getElementById("bar").style.display = "none"
                     let box2 = e.target.closest(".box2");
@@ -791,14 +1082,14 @@
 
                     if (Number(one) == 2) {
 
-                    
 
-let minus0 = e.target.closest(".minus");
-let minus =minus0.querySelectorAll('svg')[0];
-minus.setAttribute('fill', '#63AEFF');
 
-console.log(minus);
-}
+                        let minus0 = e.target.closest(".minus");
+                        let minus = minus0.querySelectorAll('svg')[0];
+                        minus.setAttribute('fill', '#63AEFF');
+
+                        console.log(minus);
+                    }
 
 
                 }
@@ -823,7 +1114,7 @@ console.log(minus);
 
 
             document.getElementById("bar").style.display = ""
-            let box0=document.getElementById("box")
+            let box0 = document.getElementById("box")
             box.style.pointerEvents = 'none';
             let el = e.target.closest(".imgg");
             let id2 = el.getAttribute('id2');
@@ -862,23 +1153,25 @@ console.log(minus);
 
                 let cart = updatedDoc.data().cart;
                 document.getElementById("qt").innerText = cart.length
+                document.getElementById("rd").innerText = cart.length
+
                 let box2 = e.target.closest(".box2");
                 let box = document.getElementById("box")
                 box.removeChild(box2);
                 document.getElementById("bar").style.display = "none"
 
-setTimeout(() => {
-    let elementss = document.querySelectorAll('.tk');
-            let ttl=0;
-                elementss.forEach(function (el) {
-                    
-                    ttl=Number(ttl)+Number(el.innerText)
+                setTimeout(() => {
+                    let elementss = document.querySelectorAll('.tk');
+                    let ttl = 0;
+                    elementss.forEach(function (el) {
 
-                });
-               document.getElementById("price").innerText=ttl
-               let box0=document.getElementById("box")
-               box.style.pointerEvents = '';
-}, 200);
+                        ttl = Number(ttl) + Number(el.innerText)
+
+                    });
+                    document.getElementById("price").innerText = ttl
+                    let box0 = document.getElementById("box")
+                    box.style.pointerEvents = '';
+                }, 200);
 
 
 
@@ -892,6 +1185,59 @@ setTimeout(() => {
 
 
         };
+
+
+
+
+
+
+
+        document.getElementById('login').onclick = function () {
+
+
+
+
+
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    const user = result.user;
+                    console.log(user.email)
+                    console.log(user.photoURL)
+                    console.log(user.displayName)
+
+
+
+                    // Define the cookie values
+                    document.cookie = `boiUser=${user.displayName}; max-age=15552000; path=/`;
+                    document.cookie = `boiEmail=${user.email}; max-age=15552000; path=/`;
+                    document.cookie = `boiPic=${user.photoURL}; max-age=15552000; path=/`;
+
+                    addUser(user.email, user.photoURL, user.displayName)
+
+
+
+                }).catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    const email = error.customData.email;
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+
+                });
+
+
+
+
+
+
+
+
+
+
+        }
+
+
 
 
 
