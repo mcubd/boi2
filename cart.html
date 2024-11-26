@@ -7,31 +7,13 @@
     <title>Document</title>
     <style>
         body {
-            background-color: rgb(43, 43, 43);
-            color: rgb(3, 64, 117);
+            background-color: #EEEEEE;
+            
             padding: 0;
             margin: 0;
         }
 
-        .top {
 
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            margin-left: 20px;
-            margin-top: 40px;
-        }
-
-        .r {
-            display: flex;
-            /* Flexbox for input and button alignment */
-            align-items: center;
-            margin-left: auto;
-            margin-right: 10px;
-
-
-
-        }
 
         .r span {
             margin-left: 4px;
@@ -163,11 +145,12 @@
 
         }
 
-        .tk {
+        .tk,.tk0 {
             font-weight: 700;
 
 
             font-size: 20px;
+            margin-top: 14px;
         }
 
 
@@ -267,6 +250,54 @@
                 right: -8%
             }
         }
+
+        .top {
+
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            /* padding-left: 20px; */
+            margin-top: 40px;
+            background-color: #FFFFFF;
+            width: 100%;
+            justify-content: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-bottom: .5rem;
+            margin-top: .5rem;
+
+        }
+
+        .top img {
+            margin-left: 20px;
+        }
+
+        .r {
+            display: flex;
+            /* Flexbox for input and button alignment */
+            align-items: center;
+            margin-left: auto;
+            margin-right: 30px;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 1.5rem;
+            
+
+
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+        #qt, #price{
+            color:#007bff!important ;
+        }
+        .r0{
+            color: black;
+        }
+        .book{
+            margin-bottom: 6px;
+        }
     </style>
 </head>
 
@@ -283,9 +314,9 @@
 
         <img src="https://eboighar.com/frontend/assets/images/svg/cart-books-150x150.svg" height="64px" alt="">
         <div class="r">
-            <span> Qty:</span>
+            <span class="r0"> Qty</span>
             <span id="qt">0</span>
-            <span>Tk.</span>
+            <span class="r0"> :  Tk.</span>
             <span id="price">0</span>
         </div>
     </div>
@@ -452,6 +483,17 @@
                     console.log(keysArray);
 
 
+
+
+
+
+
+
+
+
+
+
+
                     for (const id of nodupli) {
 
                         let count2 = 1;
@@ -485,7 +527,7 @@
                             }
 
 
-                            mrp = Number(mrp) + Number(numbers);
+                           
 
                             let node = document.createElement('div')
                             node.innerHTML = `
@@ -499,7 +541,7 @@
             </div>
             <div class="txt">
                 <span class="book">${doc3.data().title} </span>
-                <span> ${doc3.data().author}</span>
+                <span class="author0"> ${doc3.data().author}</span>
                 <span class="pri0">Unit price: Tk.<span class="pri"> ${doc3.data().price}</span> </span>
                 <span class="tk0"> Tk. <span class="tk"> ${total} </span> </span>
 
@@ -542,8 +584,22 @@
 
                         }
                     }
-                    console.log(mrp)
-                    document.getElementById("price").innerText = mrp;
+            
+
+                    setTimeout(() => {
+                        let mrp =0;
+                        let elementss = document.querySelectorAll('.tk');
+            
+            elementss.forEach(function (el) {
+                console.log(el);
+                
+                mrp=Number(mrp)+Number(el.innerText)
+
+            });
+            document.getElementById("price").innerText = mrp;
+ 
+                    }, 100);
+                    
 
 
                 }
@@ -558,6 +614,11 @@
 
         window.plus = async function (e) {
             document.getElementById("bar").style.display = ""
+            let box0=document.getElementById("box")
+            box.style.pointerEvents = 'none';
+
+
+            let one = e.target.closest(".box2").querySelectorAll('.counts')[0].querySelectorAll('.count0')[0].innerText;
 
 
 
@@ -589,18 +650,44 @@
                 let updatedDoc = await getDoc(userRef);
                 let cart = updatedDoc.data().cart;
 
+
+                document.getElementById("qt").innerText = cart.length
+
+               
+
+
+
+
+
                 let count2 = cart.filter(item => item === id2).length;
+
+                let elementse = document.querySelectorAll('.tk');
+
 
 
 
 
                 document.getElementById("bar").style.display = "none"
+ 
 
                 let el4 = e.target.closest(".counts");
                 let box2 = e.target.closest(".box2");
                 console.log(updatedDoc.data());
 
                 update(box2, count2, "no")
+
+
+
+                if (Number(one) == 1) {
+
+                    
+
+                let minus0 = e.target.closest(".counts").querySelectorAll('.minus')[0];
+                let minus =minus0.querySelectorAll('svg')[0];
+                minus.setAttribute('fill', '#1083FF');
+
+                console.log(minus);
+            }
 
 
 
@@ -623,6 +710,21 @@
                 element.innerText = count;
             });
 
+
+
+
+            let elementss = document.querySelectorAll('.tk');
+            let ttl=0;
+                elementss.forEach(function (el) {
+                    
+                    ttl=Number(ttl)+Number(el.innerText)
+
+                });
+               document.getElementById("price").innerText=ttl
+
+               let box0=document.getElementById("box")
+               box.style.pointerEvents = '';
+
         };
 
         window.minus = async function (e) {
@@ -635,7 +737,10 @@
             console.log(one);
             if (Number(one) > 1) {
                 document.getElementById("bar").style.display = ""
+                let box0=document.getElementById("box")
+                box.style.pointerEvents = 'none';
             }
+
 
             if (getCookie("boiEmail") != undefined) {
                 const usersRef = collection(firestore, "boiUser");
@@ -675,10 +780,25 @@
 
 
                     let cart = updatedDoc.data().cart;
+
+                    document.getElementById("qt").innerText = cart.length
                     let count2 = cart.filter(item => item === id2).length;
                     document.getElementById("bar").style.display = "none"
                     let box2 = e.target.closest(".box2");
                     update(box2, count2, "no");
+
+
+
+                    if (Number(one) == 2) {
+
+                    
+
+let minus0 = e.target.closest(".minus");
+let minus =minus0.querySelectorAll('svg')[0];
+minus.setAttribute('fill', '#63AEFF');
+
+console.log(minus);
+}
 
 
                 }
@@ -701,8 +821,10 @@
 
 
 
- 
+
             document.getElementById("bar").style.display = ""
+            let box0=document.getElementById("box")
+            box.style.pointerEvents = 'none';
             let el = e.target.closest(".imgg");
             let id2 = el.getAttribute('id2');
 
@@ -734,12 +856,29 @@
                 await updateDoc(userRef, {
                     "cart": result
                 });
+
+                let updatedDoc = await getDoc(userRef);
+
+
+                let cart = updatedDoc.data().cart;
+                document.getElementById("qt").innerText = cart.length
                 let box2 = e.target.closest(".box2");
-            let box=document.getElementById("box")
-            box.removeChild(box2);
+                let box = document.getElementById("box")
+                box.removeChild(box2);
                 document.getElementById("bar").style.display = "none"
 
+setTimeout(() => {
+    let elementss = document.querySelectorAll('.tk');
+            let ttl=0;
+                elementss.forEach(function (el) {
+                    
+                    ttl=Number(ttl)+Number(el.innerText)
 
+                });
+               document.getElementById("price").innerText=ttl
+               let box0=document.getElementById("box")
+               box.style.pointerEvents = '';
+}, 200);
 
 
 
