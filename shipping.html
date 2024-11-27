@@ -641,46 +641,66 @@
             //         name: String(name),
             //         date: Timestamp.now()
             //     });
-                 
+
 
             // } else {
-                
+
 
             // }
 
 
- 
- 
+
+
 
             if (getCookie("boiEmail") != undefined) {
                 const usersRef = collection(firestore, "boiUser");
                 const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
                 const querySnapshot = await getDocs(q);
                 const userDoc = querySnapshot.docs[0];
-            
+
 
 
                 const userRef = doc(firestore, "boiUser", userDoc.id);
 
- 
+
                 await updateDoc(userRef, {
                     "number": String(num),
                     "zila": String(zila),
                     "address": String(addr)
                 });
 
-               alert("Order Submited")
-           
+               
+                const randomString = [...Array(8)].map(() => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random() * 62)]).join('');
+                console.log(randomString);
 
-                
+                const usersRef6 = collection(firestore, "boiUser");
+            const q6 = query(usersRef6, where("gmail", "==", getCookie("boiEmail")));
+            const querySnapshot6 = await getDocs(q6);
+            const userDoc6 = querySnapshot6.docs[0].data();
+
+
+                const docRef = await addDoc(collection(firestore, "boiOrder"), {
+                    orderId: randomString,
+                    customerId: String(getCookie("boiEmail")),
+                    orderItems:userDoc6.cart,
+                    status: "pending",
+                    date: Timestamp.now()
+                });
+
+                alert("Order Submited")
+
 
 
             }
 
 
-  
+
 
         }
+
+
+
+
 
         window.countDuplicates = function (strings) {
             const counts = {};
@@ -707,11 +727,11 @@
 
 
             const usersRef6 = collection(firestore, "boiUser");
-                const q6 = query(usersRef6, where("gmail", "==", getCookie("boiEmail")));
-                const querySnapshot6 = await getDocs(q6);
-                const userDoc6 = querySnapshot6.docs[0].data();
+            const q6 = query(usersRef6, where("gmail", "==", getCookie("boiEmail")));
+            const querySnapshot6 = await getDocs(q6);
+            const userDoc6 = querySnapshot6.docs[0].data();
 
-                console.log(userDoc6);
+            console.log(userDoc6);
 
 
 
@@ -829,9 +849,9 @@
 
                 } else {
 
-                    let o=document.getElementById('inp3').value;
-                    let oo=document.getElementById('inp4').value;
-                    let ooo=document.getElementById('inp5').value;
+                    let o = document.getElementById('inp3').value;
+                    let oo = document.getElementById('inp4').value;
+                    let ooo = document.getElementById('inp5').value;
 
 
                     document.cookie = `boiNumber=${o}; max-age=15552000; path=/`;
@@ -839,7 +859,7 @@
                     document.cookie = `boiAddress=${ooo}; max-age=15552000; path=/`;
 
 
-addUserFs(o,oo,ooo)
+                    addUserFs(o, oo, ooo)
 
 
 
