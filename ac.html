@@ -87,9 +87,54 @@
       /* footer only */
     </style>
 
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #EEEEEE;
+            font-family: "Roboto", sans-serif;
+
+            font-style: normal;
+        }
+.mainn{
+    width: 100%;
+}
+ .li0{
+    width: 100%;
+    height: 3rem;
+    background-color: #727088;
+    font-weight: 380;
+    font-size: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+ }
+
+
+ .li{
+    width: 100%;
+    height: 2rem;
+    background-color: #FFFFFF;
+    font-weight: 300;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    border-bottom: 1px solid #D7D7D7;
+    display: flex;
+    align-items: center;
+
+ }
+ .li svg{
+    margin-right: 10px;
+ }
+
+</style>
 
 </head>
 <body>
+
+
     <div class="footer">
 
         <svg id="hm" xmlns="http://www.w3.org/2000/svg" width="18px" height="20px" viewBox="0 0 17.996 20.442">
@@ -125,8 +170,40 @@
           </svg>
 
     </div>
-    <h1>ac</h1>
+ 
 
+    <div class="mainn">
+        <div class="mainn0">
+            <div  class="li0">My Account</div>
+            <div onclick="orders()" class="li">
+                <svg xmlns="http://www.w3.org/2000/svg"  height="26" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                  </svg>
+                  <span>Orders</span>
+            </div>
+            <div class="li">
+ 
+                <svg fill="#000000"  height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M19.367 18.102L18 14h-1.5l.833 4H2.667l.833-4H2L.632 18.102C.285 19.146.9 20 2 20h16c1.1 0 1.715-.854 1.367-1.898zM15 5A5 5 0 1 0 5 5c0 4.775 5 10 5 10s5-5.225 5-10zm-7.7.06c0-1.491 1.208-2.699 2.7-2.699a2.699 2.699 0 1 1 0 5.399 2.7 2.7 0 0 1-2.7-2.7z"/></svg>
+               
+                <span>Shipping Address</span>
+
+
+            </div>
+            <div onclick="rmvv()" class="li">
+                <svg xmlns="http://www.w3.org/2000/svg"   height="26" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+                    <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+                  </svg>
+                  <span>Log Out</span>
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
 
 
 
@@ -146,6 +223,16 @@
     
     </script>
 
+<script>
+
+     window.orders =async function () {
+        window.location.href = './orders.html';
+    };
+     window.rmvv =async function () {
+        
+    
+    };
+</script>
 
 
     
