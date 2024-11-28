@@ -467,6 +467,31 @@
         }
 
 
+
+        window.startt =async function () {
+            
+          
+
+            const usersRef = collection(firestore, "boiUser");
+            const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.size == 1) {
+
+                if (querySnapshot.docs[0].data().cart != undefined ) {
+
+
+ 
+                    document.getElementById("rd").innerText = querySnapshot.docs[0].data().cart.length
+
+                }
+            }
+
+
+                };startt()
+
+                
+
         const usersRef = collection(firestore, "boiOrder");
         const q = query(usersRef, where("customerId", "==", getCookie("boiEmail")),orderBy("date", "desc") );
         const querySnapshot = await getDocs(q);

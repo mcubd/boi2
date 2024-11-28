@@ -579,6 +579,44 @@
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(';').shift();
         }
+
+
+
+
+
+
+        window.startt =async function () {
+            
+          
+
+            const usersRef = collection(firestore, "boiUser");
+            const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.size == 1) {
+
+                if (querySnapshot.docs[0].data().cart != undefined ) {
+
+
+ 
+                    document.getElementById("rd").innerText = querySnapshot.docs[0].data().cart.length
+
+                }
+            }
+
+
+                };startt()
+
+
+
+
+
+
+
+
+
+
+
         window.countDuplicates = function (strings) {
             const counts = {};
 
