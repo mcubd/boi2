@@ -13,7 +13,7 @@
             margin: 0;
             user-select: none;
             font-family: "Roboto", sans-serif;
-
+            opacity: 0;
             font-style: normal;
         }
 
@@ -438,6 +438,7 @@
         .final{
             margin-top: 30px;
             padding-bottom:6.8rem;
+            display: none;
         }
         .final span{
              display: flex;
@@ -551,7 +552,7 @@
 </style>
 </head>
 
-<body>
+<body >
 
 
     <header>
@@ -671,7 +672,7 @@
 
 
 
-    <div class="final" onclick="nextt()">
+    <div id="finall21" class="final" onclick="nextt()">
 
         <span>Total = Tk.  <span id="ttl4"> </span></span>
 
@@ -682,6 +683,16 @@
     </div>
 
     <script>
+                window.getCookie2 = function (name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        if(getCookie2("boiPic") == undefined){
+            window.location.href = './ac.html';
+        }else{
+            document.body.style.opacity =1;
+        }
 
         document.getElementById("hm").onclick = function () {
             window.location.href = './1.html';
@@ -792,6 +803,8 @@
             const usersRef = collection(firestore, "boiUser");
             const q = query(usersRef, where("gmail", "==", gmail));
             const querySnapshot = await getDocs(q);
+
+          
 
             if (querySnapshot.size == 1) {
 
@@ -917,7 +930,7 @@
                         }
                     }
 
-
+ document.getElementById("finall21").style.display="block"
                     setTimeout(() => {
                         let mrp = 0;
                         let elementss = document.querySelectorAll('.tk');
@@ -929,11 +942,16 @@
 
                         });
                         document.getElementById("price").innerText = mrp;
+                       
                         document.getElementById("ttl4").innerText = mrp;
                     }, 100);
 
 
 
+                }else{
+
+                    document.getElementById("finall21").style.display="none"
+                    document.getElementById("rd").innerText = "0"
                 }
 
 
@@ -1243,43 +1261,7 @@
 
 
         document.getElementById('login').onclick = function () {
-
-
-
-
-
-            signInWithPopup(auth, provider)
-                .then((result) => {
-                    const credential = GoogleAuthProvider.credentialFromResult(result);
-                    const token = credential.accessToken;
-                    const user = result.user;
-                    console.log(user.email)
-                    console.log(user.photoURL)
-                    console.log(user.displayName)
-
-
-
-                    // Define the cookie values
-                    document.cookie = `boiUser=${user.displayName}; max-age=15552000; path=/`;
-                    document.cookie = `boiEmail=${user.email}; max-age=15552000; path=/`;
-                    document.cookie = `boiPic=${user.photoURL}; max-age=15552000; path=/`;
-
-                    addUser(user.email, user.photoURL, user.displayName)
-
-
-
-                }).catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    const email = error.customData.email;
-                    const credential = GoogleAuthProvider.credentialFromError(error);
-
-                });
-
-
-
-
-
+            window.location.href = './ac.html';
 
 
 

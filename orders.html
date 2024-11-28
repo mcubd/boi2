@@ -12,8 +12,12 @@
             padding: 0;
             background-color: #EEEEEE;
             font-family: "Roboto", sans-serif;
-
+            user-select: none;
             font-style: normal;
+        }
+        #mainRoot{
+            margin-bottom: 120px;
+            z-index: 1;
         }
 
         ul {
@@ -196,7 +200,7 @@
             /* Horizontally center the items */
             align-items: center;
             box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
-
+            z-index: 55;
 
 
         }
@@ -416,6 +420,9 @@
     </div>
 
 
+    <div id="noo"></div>
+
+
     <script>
 
         document.getElementById("hm").onclick = function () {
@@ -490,12 +497,19 @@
 
                 };startt()
 
-                
+
 
         const usersRef = collection(firestore, "boiOrder");
         const q = query(usersRef, where("customerId", "==", getCookie("boiEmail")),orderBy("date", "desc") );
         const querySnapshot = await getDocs(q);
         const userDocs = querySnapshot.docs;
+
+         
+
+        if(userDocs.length==0){
+            document.getElementById("noo").innerHTML=`You have 0 orders`
+
+        }
 
 
 

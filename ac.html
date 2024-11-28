@@ -22,7 +22,7 @@
             align-items: center;
             box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
 
-
+            z-index: 55;
 
         }
 
@@ -95,7 +95,7 @@
             padding: 0;
             background-color: #EEEEEE;
             font-family: "Roboto", sans-serif;
-
+            user-select: none;
             font-style: normal;
         }
 
@@ -188,6 +188,9 @@
             padding-top: 12px;
             margin-bottom: 80px;
         }
+       #opacityy{
+            opacity: 0;
+        }
     </style>
 
 </head>
@@ -234,7 +237,7 @@
     </div>
 
 
-    <div class="mainn">
+    <div id="opacityy" class="mainn">
         <div class="mainn0">
             <div class="li0">My Account <img height="40px" id="logo" src="" alt=""> </div>
             <div id="li1" onclick="orders()" class="li">
@@ -400,6 +403,29 @@
         }
 
 
+        document.getElementById("opacityy").style.opacity =1;
+
+         window.addus =async function (gmail, img, name) {
+            const usersRef = collection(firestore, "boiUser");
+            const q = query(usersRef, where("gmail", "==", gmail));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.size == 0) {
+                const docRef = await addDoc(collection(firestore, "boiUser"), {
+                    gmail: String(gmail),
+                    img: String(img),
+                    name: String(name),
+                    date: Timestamp.now(),
+                    cart:[]
+                });
+                location.reload();
+
+            } else {
+                location.reload();
+
+            }
+        
+        };
 
 
         window.logg = function () {
@@ -424,7 +450,7 @@
                     document.cookie = `boiEmail=${user.email}; max-age=15552000; path=/`;
                     document.cookie = `boiPic=${user.photoURL}; max-age=15552000; path=/`;
 
-                    location.reload();
+                    addus(user.email,user.photoURL,user.displayName)
 
 
                 }).catch((error) => {

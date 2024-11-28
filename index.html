@@ -816,13 +816,14 @@ document.getElementById("ac").onclick = function () {
 
         window.add = async function () {
             const docRef = await addDoc(collection(firestore, "boiList"), {
-                title: String("book3"),
-                author: String("author3"),
-                price: String("Tk. 94"),
-                img: String("https://d25swln94uq8y4.cloudfront.net/media/book_th/eb002603.jpg"),
+                title: String("book4"),
+                author: String("author4"),
+                price: String("Tk. 104"),
+                img: String("https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2FGolpe_Golpe_Arthaniti-Mohaimin_Patwari-cf297-267638.jpg?alt=media&token=86342ec1-fb1a-406e-92f4-8d7a6b4a19f6"),
                 date: Timestamp.now()
             });
         }
+        
 
         window.addUser = async function (gmail, img, name) {
             const usersRef = collection(firestore, "boiUser");
@@ -834,7 +835,8 @@ document.getElementById("ac").onclick = function () {
                     gmail: String(gmail),
                     img: String(img),
                     name: String(name),
-                    date: Timestamp.now()
+                    date: Timestamp.now(),
+                    cart:[]
                 });
                 location.reload();
 
