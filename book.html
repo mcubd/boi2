@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         * {
@@ -15,9 +16,15 @@
         body {
             background-color: #F0F1F3;
             user-select: none;
+            font-family: "Roboto", sans-serif;
+
+            font-style: normal;
+        }
+        .swal2-deny {
+            background-color: #28a745 !important;
         }
 
-        .main {
+        /* .main {
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -37,53 +44,54 @@
         .main>* {
             background-color: #FFFFFF;
             /* Apply background color to the content */
-            width: calc(100% - 30px);
-            /* Subtract 15px from left and right */
-            padding-left: 15px;
-            padding-right: 15px;
-            /* box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1),0 -54px 8px rgba(0, 0, 0, 0.1),4px 0 8px rgba(0, 0, 0, 0.1); */
+        /* width: calc(100% - 30px); */
+        /* Subtract 15px from left and right */
+        /* padding-left: 15px;
+            padding-right: 15px; */
+        /* box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1),0 -54px 8px rgba(0, 0, 0, 0.1),4px 0 8px rgba(0, 0, 0, 0.1); */
 
 
-        }
+        /* } */
 
-        #price {
+        /* #price {
             /* box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1); */
-        }
-
+        /* } */
+        */
+        /* 
         .main img {
             /* box-shadow: 0 -9px 8px rgba(0, 0, 0, 0.1); */
-            padding-top: 20px;
+        /* padding-top: 20px;
 
-            box-shadow: -3px 5px 5px rgba(0, 0, 0, 0.15), 3px 5px 5px rgba(0, 0, 0, 0.15), 0px -10px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: -3px 5px 5px rgba(0, 0, 0, 0.15), 3px 5px 5px rgba(0, 0, 0, 0.15), 0px -10px 10px rgba(0, 0, 0, 0.2); */
 
 
-            /* box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1),-4px 0 8px rgba(0, 0, 0, 0.3); */
-        }
+        /* box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1),-4px 0 8px rgba(0, 0, 0, 0.3); */
+        /* } */
 
-        .main span,
+        /* .main span,
         hr {
             box-shadow: -3px 5px 5px rgba(0, 0, 0, 0.15), 3px 5px 5px rgba(0, 0, 0, 0.15);
-        }
-
+        } */
+        /* 
         .h11 {
             text-align: center;
             margin-top: 15px;
 
-        }
+        } */
 
-        .h1 {
+        /* .h1 {
             text-align: center;
             padding-top: 18px;
             padding-bottom: 10px;
-        }
-
+        } */
+        /* 
         h2 {
             display: inline;
             color: #0397d3;
             margin-left: 3px;
-        }
+        } */
 
-        #price {
+        /* #price {
             text-align: center;
             padding-top: 8px;
 
@@ -100,9 +108,10 @@
             display: flex;
             justify-content: center;
             /* Center horizontally */
-            align-items: center;
-        }
-
+        /* align-items: center;
+            display: none;
+        } */
+        /* 
         .btn {
             width: 92%;
             height: 70px;
@@ -111,28 +120,41 @@
             display: flex;
             justify-content: center;
             /* Center horizontally */
-            align-items: center;
-        }
-
-
-        #h3 {
+        /* align-items: center; */
+        /* } */
+        */
+        /* #h3 {
             display: flex;
             align-items: center;
             /* Vertically align text with the image */
-            margin: 0;
-            /* Remove default margin */
-        }
-
+        /* margin: 0; */
+        /* Remove default margin */
+        /* } */
+        */ */
+        /* 
         #h3 img {
             margin-right: 10px;
             /* Space between the image and text */
-            color: #FFFFFF;
-        }
+        /* color: #FFFFFF; */
+        /* } */
+        */
+        /* hr{
+            /* border-bottom: 1px solid #ced4da; */
+        /* width: 10px; */
+
+        /* } */
+        */
+        /* .main0{
+            margin-bottom: 80px;
+            margin-top: 80px;
+             
+        } */
+        */
     </style>
 
-<style>
-    /* footer only */
-    .footer {
+    <style>
+        /* footer only */
+        .footer {
             width: 100%;
             height: 3.8rem;
             background-color: rgb(255, 255, 255);
@@ -150,12 +172,14 @@
         }
 
         #hm,
-        .cartt,#ac {
+        .cartt,
+        #ac {
             width: 33%;
             justify-content: center;
         }
 
         .cartt {
+            opacity: .5;
             display: inline-flex;
             align-items: flex-start;
             justify-content: center;
@@ -192,16 +216,17 @@
 
 
         #hm {
-            opacity: .5;
+            /* opacity: .5; */
             justify-content: center;
             text-align: center;
         }
 
         #cartt00 {
-          
+
             justify-content: center;
             text-align: center;
         }
+
         #ac {
             opacity: .5;
         }
@@ -211,12 +236,331 @@
             overflow-x: hidden;
         }
 
-  /* footer only */
+        /* footer only */
+    </style>
+
+<style>
+    header {
+        background-color: #25A8D6;
+        width: 100%;
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: flex-start;
+        position: sticky;
+        top: 0;
+        z-index: 6;
+
+
+        /* box-shadow: 0px 1px 13px 1px rgba(204, 204, 204, 0.384); */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        /* Adjust shadow strength and spread */
+
+
+
+    }
+
+    @media (min-width: 1024px) {
+        header {
+            height: 78px;
+        }
+    }
+
+    @media (max-aspect-ratio: 1/1) {
+        header {
+            height: 68px;
+        }
+    }
+
+    #title0 {
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    input {
+        width: 100%;
+        height: 52px;
+
+
+        background-color: #F1F2F4;
+        outline: none;
+        /* Removes the outline */
+        border: none;
+        /* Optional: Removes the border if any */
+        box-shadow: none;
+        margin-left: 1.25rem;
+
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    .logos {
+        display: flex;
+        /* Keep image and text on the same line */
+        align-items: center;
+        /* justify-content: space-between;   */
+        width: 100%;
+
+    }
+
+    .logos1 {
+        display: flex;
+        /* Keep image and text on the same line */
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+
+
+    #go {
+        /* background: linear-gradient(30deg,#4fd9ff 13.4%,#5fdbec 26.94%,#8ae3bc 54.25%,#c4ee7d 86.6%); */
+        background-color: transparent;
+        width: 3.5rem;
+        border-radius: .75rem;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        height: 48px;
+        outline: none;
+        /* Removes the outline */
+        border: none;
+        /* Optional: Removes the border if any */
+        box-shadow: none;
+    }
+
+    .login {
+
+        display: flex;
+        /* Flexbox for input and button alignment */
+        align-items: center;
+        /* Vertical alignment */
+        /* Set width of #input0 to 80% */
+        padding: 7px 10px;
+        background-color: #39b1dd;
+        /* margin: 0 auto; */
+        margin-left: auto;
+        border-radius: .75rem;
+        gap: 10px;
+        color: black;
+        margin-right: 10px;
+
+
+
+        /* margin-left: 40px; */
+    }
+
+    #dp {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+
+    .final{
+        margin-top: 30px;
+        padding-bottom:6.8rem;
+    }
+    .final span{
+         display: flex;
+         justify-content: center;
+         font-size: 26px;
+    }   
+    .box4{
+       
+        height: 60px;
+
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center;  
+    }
+    .box4 span{
+
+        height: 100%;
+        background-color: #FFC107;
+        text-align: center;
+        justify-content: center; /* Centers horizontally */
+        align-items: center;  
+width: 90%;
+border-radius: 8px;
+
+    }
+
+
 </style>
 
+
+    <style>
+        .main0 {
+            width: 100%;
+
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+
+        .main {
+            width: 90%;
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            padding-top: 15px;
+            padding-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .h11 {
+            margin-top: 14px;
+            font-weight: 390;
+            font-size: 30px;
+
+        }
+
+        .h1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 14px;
+            font-weight: 400;
+            font-size: 24px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #ced4da;
+            width: 86%;
+            padding-bottom: 15px;
+        }
+
+        .h10 {
+            margin-left: 10px;
+            color: #109CD5;
+        }
+
+
+        #price {
+            font-weight: 450;
+            font-size: 32px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ced4da;
+            width: 86%;
+            text-align: center;
+        }
+
+        .counttt {
+            background-color: #F9F9F9;
+            width: 80%;
+            height: 3.75rem;
+            margin-top: 26px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            border: 2px solid #ced4da;
+            border-radius: 8px;
+        }
+
+        .counttt .counttt0 {
+
+            width: 80%;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .counttt .counttt0 span {
+            font-weight: 400;
+            font-size: 24px;
+            margin-left: 20px;
+            margin-right: 16px;
+
+        }
+
+
+        #add21 {
+            margin-top: 26px;
+            background-color: #25A8D6;
+            width: 80%;
+            height: 3.75rem;
+
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            border: 2px solid #ced4da;
+            border-radius: 8px;
+            font-weight: 400;
+            font-size: 24px;
+            color: white;
+
+
+        }
+
+        #minusSvg {
+            opacity: .4;
+        }
+    </style>
 </head>
 
 <body>
+
+    <header>
+
+        <div class="logos">
+            <a href="./1.html">
+
+            <div class="logos1">
+                <span>
+                    <img src="https://medeasy.health/assets/images/medEasyIcon.svg" alt="">
+                </span>
+                <span id="title0">
+                    MedEasy
+                </span>
+            </div>
+        </a>
+
+
+            <div id="login" class="login">
+
+                <svg id="svglogin" fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 481.5 481.5" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M0,240.7c0,7.5,6,13.5,13.5,13.5h326.1l-69.9,69.9c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4l93-93
+			c5.3-5.3,5.3-13.8,0-19.1l-93-93c-5.3-5.3-13.8-5.3-19.1,0c-5.3,5.3-5.3,13.8,0,19.1l69.9,69.9h-326C6,227.2,0,233.2,0,240.7z" />
+                            <path d="M382.4,0H99C44.4,0,0,44.4,0,99v58.2c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5V99c0-39.7,32.3-72,72-72h283.5
+			c39.7,0,72,32.3,72,72v283.5c0,39.7-32.3,72-72,72H99c-39.7,0-72-32.3-72-72V325c0-7.5-6-13.5-13.5-13.5S0,317.5,0,325v57.5
+			c0,54.6,44.4,99,99,99h283.5c54.6,0,99-44.4,99-99V99C481.4,44.4,437,0,382.4,0z" />
+                        </g>
+                    </g>
+                </svg>
+
+
+                <span id="txtlogin">Log in</span>
+                <img id="dp">
+
+            </div>
+
+
+        </div>
+
+
+    </header>
 
     <div class="footer">
 
@@ -248,39 +592,41 @@
 
         </div>
 
-        <svg id="ac" xmlns="http://www.w3.org/2000/svg"   height="32" fill="black" class="bi bi-person" viewBox="0 0 16 16">
-            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-          </svg>
+        <svg id="ac" xmlns="http://www.w3.org/2000/svg" height="32" fill="black" class="bi bi-person"
+            viewBox="0 0 16 16">
+            <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+        </svg>
 
     </div>
-  
+
 
     <div id="main0" class="main0">
 
     </div>
 
 
-    <div class="cart">
+    <!-- <div   class="cart">
 
         <div class="btn" onclick="cart()">
             <h3 id="h3"> <img src="https://www.rokomari.com/static/200/images/cart-info.png" alt=""> Add to Cart</h3>
         </div>
-    </div>
+    </div> -->
 
     <script>
 
         document.getElementById("hm").onclick = function () {
             window.location.href = './1.html';
         }
-    
+
         document.getElementById("cartt00").onclick = function () {
             window.location.href = './cart.html';
-    
-    }
-    document.getElementById("ac").onclick = function () {
+
+        }
+        document.getElementById("ac").onclick = function () {
             window.location.href = './ac.html';
         }
-    
+
     </script>
 
     <script type="module">
@@ -305,6 +651,56 @@
 
 
         const firestore = getFirestore(app1);
+
+
+        window.getCookie = function (name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        if (getCookie("boiEmail") != undefined) {
+            document.getElementById('dp').src = getCookie("boiPic")
+            document.getElementById('svglogin').style.display = 'none';
+            document.getElementById('txtlogin').style.display = 'none';
+            document.getElementById('dp').style.display = '';
+
+        } else {
+            document.getElementById('svglogin').style.display = '';
+            document.getElementById('txtlogin').style.display = '';
+            document.getElementById('dp').style.display = 'none';
+        }
+
+
+         window.startt =async function () {
+
+
+            const usersRef = collection(firestore, "boiUser");
+            const q = query(usersRef, where("gmail", "==", getCookie("boiEmail")));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.size == 1) {
+
+                if (querySnapshot.docs[0].data().cart != undefined  ) {
+
+
+                    console.log(querySnapshot.docs[0].data().cart)
+                    document.getElementById("rd").innerText = querySnapshot.docs[0].data().cart.length
+
+                }
+
+            }
+
+        
+        };startt()
+        
+
+
+
+
+
+
+
 
 
 
@@ -335,10 +731,35 @@
  
         <img src=${data.img} width="300px" height="auto" alt="">
         <span><h1 class="h11">${data.title}</h1> </span>
-        <span class="h1"> by <h2>${data.author}</h2> </span>
-        <hr>
-        <span id="price"><h1>  ${data.price}</h1></span>
-    
+        <span id="authorr" class="h1"> by <span class="h10">${data.author}</span> </span>
+       
+        
+        <span id="price"><span>Tk.  ${data.price}</span></span>
+                
+
+                <div class="counttt">
+               <div class="counttt0">
+
+<svg id="minusSvg" onclick="calcu(event)" xmlns="http://www.w3.org/2000/svg"   height="38" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+</svg>
+
+<span id="numm1">1</span>
+
+<svg id="plusSvg" onclick="calcu(event)" xmlns="http://www.w3.org/2000/svg"   height="36" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+</svg>
+                    
+
+                    </div>
+                    
+                    </div>
+
+
+                    <div onclick="cartt()" id="add21">
+                        Add to cart
+                        </div
+
 
     
     `
@@ -364,11 +785,8 @@
         book()
 
 
-        window.cart = async function () {
-            // alert(4)
-            // const usersRef = collection(firestore, "boiUser");
-            //         const q = query(usersRef, where("gmail", "==", gmail));
-            //         const querySnapshot = await getDocs(q);
+        window.cartt = async function () {
+
 
             if (getCookie("boiEmail") != undefined) {
                 const usersRef = collection(firestore, "boiUser");
@@ -382,35 +800,97 @@
 
                 const urlParams = new URLSearchParams(window.location.search);
 
-// Retrieve the 'id' query parameter
-const id = urlParams.get('id');
+                const id = urlParams.get('id');
                 const currentData = userDoc.data().cart || [];
-                currentData.push(id);
+
+                let numm10 = document.getElementById("numm1").innerText
+                let times0=Number(numm10)
+
+                for (let i = 0; i < times0; i++) {
+                    currentData.push(id);
+                }
+
 
 
                 await updateDoc(userRef, {
-                    "cart": currentData  // Add new status value to the array
+                    "cart": currentData
+                });
+
+                startt()
+
+                Swal.fire({
+                    title: `Added to cart
+                    Visit Cart?`,
+                    showDenyButton: true,
+
+                    confirmButtonText: "Later",
+                    denyButtonText: `Yes,Cheak Cart`
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+                        Swal.close(); 
+                    } else if (result.isDenied) {
+                        window.location.href = `./cart.html`;
+                    }
                 });
 
 
 
 
             } else {
-                alert("Log in plz")
+                Swal.fire({
+                    title: `Log In plz`,
+                    showDenyButton: true,
+
+                    confirmButtonText: "Later",
+                    denyButtonText: `Yes,Log In`
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+                        Swal.close(); 
+                    } else if (result.isDenied) {
+                        window.location.href = `./ac.html`;
+                    }
+                });
             }
 
         }
 
 
 
-        window.getCookie = function (name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        }
 
         // Retrieve the values
         console.log(getCookie("boiEmail")); // Outputs: Zayn
+
+
+
+        window.calcu = async function (e) {
+            let el = e.target.closest("svg");
+            console.log(el.id);
+
+            let numm1 = document.getElementById("numm1").innerText
+            if (Number(numm1) == 1 && el.id == "minusSvg") {
+
+            }
+
+            if (Number(numm1) > 0 && el.id == "plusSvg") {
+                document.getElementById("minusSvg").style.opacity = 1
+                document.getElementById("numm1").innerText = Number(numm1) + 1
+
+            }
+
+
+            if (Number(numm1) == 2 && el.id == "minusSvg") {
+                document.getElementById("minusSvg").style.opacity = .4
+                document.getElementById("numm1").innerText = Number(numm1) - 1
+            }
+
+            if (Number(numm1) > 2 && el.id == "minusSvg") {
+                document.getElementById("minusSvg").style.opacity = 1
+                document.getElementById("numm1").innerText = Number(numm1) - 1
+            }
+
+        };
 
     </script>
 </body>

@@ -11,6 +11,10 @@
             overflow-x: hidden; 
             padding: 0;
             margin: 0;
+            user-select: none;
+            font-family: "Roboto", sans-serif;
+
+            font-style: normal;
         }
 
 
@@ -1050,6 +1054,7 @@
 
             });
             document.getElementById("price").innerText = ttl
+            document.getElementById("ttl4").innerText = ttl;
 
             let box0 = document.getElementById("box")
             box.style.pointerEvents = '';
@@ -1213,6 +1218,7 @@
 
                     });
                     document.getElementById("price").innerText = ttl
+                    document.getElementById("ttl4").innerText = ttl;
                     let box0 = document.getElementById("box")
                     box.style.pointerEvents = '';
                 }, 200);

@@ -10,11 +10,15 @@
 
 
     <style>
-        body {
+        body,html {
             background-color: #FFFFFF;
             color: rgb(0, 0, 0);
             margin: 0;
             padding: 0;
+            user-select: none;
+            font-family: "Roboto", sans-serif;
+
+            font-style: normal;
 
         }
 
@@ -191,6 +195,7 @@
             margin: 0;
             list-style-type: none;
             justify-content: center;
+            margin-bottom: 80px;
 
         }
 
@@ -627,6 +632,13 @@ document.getElementById("ac").onclick = function () {
 
         document.getElementById('login').onclick = function () {
 
+            if(getCookie("boiUser") != undefined){
+                window.location.href = `./ac.html`;
+
+            }else{
+
+          
+
 
 
 
@@ -661,7 +673,7 @@ document.getElementById("ac").onclick = function () {
 
 
 
-
+            }
 
 
 
@@ -780,7 +792,7 @@ document.getElementById("ac").onclick = function () {
                 <img src=${obj.img} alt="">
                 <span class="twoo twwo">${obj.title}</span>
                 <span class="twoo twooo">${obj.author}</span>
-                <span class="lasst">${obj.price}</span>
+                <span class="lasst">Tk. ${obj.price}</span>
             </div>
     `
 
