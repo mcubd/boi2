@@ -6,85 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <style>
-        .footer {
-            width: 100%;
-            height: 3.8rem;
-            background-color: rgb(255, 255, 255);
-            position: fixed;
-            bottom: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            /* Horizontally center the items */
-            align-items: center;
-            box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
-
-
-
-        }
-
-        #hm,
-        .cartt {
-            width: 50%;
-            justify-content: center;
-        }
-
-        .cartt {
-            display: inline-flex;
-            align-items: flex-start;
-            justify-content: center;
-        }
-
-        #rd {
-            color: rgb(255 255 255);
-            font-weight: 700;
-
-            background-color: rgb(255 78 99);
-
-
-
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-            width: 18px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-left: -10px;
-            /* Adjusts overlap with the SVG */
-            margin-top: -5px;
-            /* Moves badge upwards */
-            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-            z-index: 1;
-            /* Ensures the badge is above the SVG */
-
-
-        }
-
-
-        #hm {
-            opacity: .6;
-            justify-content: center;
-            text-align: center;
-        }
-
-        #cartt00 {
-            opacity: .5;
-            justify-content: center;
-            text-align: center;
-        }
-
-        body,
-        html {
-            overflow-x: hidden;
-        }
-    </style>
+ 
     <style>
         body {
             margin: 0;
@@ -429,7 +356,98 @@
             /* outline: 2px solid  #83BFFF;   */
             box-shadow: 0 0 3px #83BFFF;
         }
+
+
+        .swal2-deny {
+            background-color: #28a745 !important;
+        }
     </style>
+
+
+<style>
+    /* footer only */
+    .footer {
+            width: 100%;
+            height: 3.8rem;
+            background-color: rgb(255, 255, 255);
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /* Horizontally center the items */
+            align-items: center;
+            box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
+
+
+
+        }
+
+        #hm,
+        .cartt,#ac {
+            width: 33%;
+            justify-content: center;
+        }
+
+        .cartt {
+            display: inline-flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+
+        #rd {
+            color: rgb(255 255 255);
+            font-weight: 700;
+
+            background-color: rgb(255 78 99);
+
+
+
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: -10px;
+            /* Adjusts overlap with the SVG */
+            margin-top: -5px;
+            /* Moves badge upwards */
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            /* Ensures the badge is above the SVG */
+
+
+        }
+
+
+        #hm {
+            opacity: .5;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #cartt00 {
+           
+            justify-content: center;
+            text-align: center;
+        }
+
+        #ac {
+            opacity: .5;
+        }
+        body,
+        html {
+            overflow-x: hidden;
+        }
+
+  /* footer only */
+</style>
+
 </head>
 
 <body>
@@ -441,7 +459,7 @@
         <svg id="hm" xmlns="http://www.w3.org/2000/svg" width="18px" height="20px" viewBox="0 0 17.996 20.442">
             <path
                 d="M48.187,7.823,39.851.182A.7.7,0,0,0,38.9.2L31.03,7.841a.7.7,0,0,0-.211.5V19.311a.694.694,0,0,0,.694.694H37.3A.694.694,0,0,0,38,19.311V14.217h3.242v5.095a.694.694,0,0,0,.694.694h5.789a.694.694,0,0,0,.694-.694V8.335a.7.7,0,0,0-.228-.512ZM47.023,18.617h-4.4V13.522a.694.694,0,0,0-.694-.694H37.3a.694.694,0,0,0-.694.694v5.095H32.2V8.63l7.192-6.98L47.02,8.642v9.975Z"
-                transform="translate(-30.619 0.236)" fill="#777777" stroke="currentColor" stroke-width="0.4"></path>
+                transform="translate(-30.619 0.236)" fill="black" stroke="currentColor" stroke-width="0.4"></path>
         </svg>
 
         <div id="cartt00" class="cartt">
@@ -465,6 +483,10 @@
 
 
         </div>
+
+        <svg id="ac" xmlns="http://www.w3.org/2000/svg"   height="32" fill="black" class="bi bi-person" viewBox="0 0 16 16">
+            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+          </svg>
 
     </div>
 
@@ -582,11 +604,15 @@
         document.getElementById("hm").onclick = function () {
             window.location.href = './1.html';
         }
-
+    
         document.getElementById("cartt00").onclick = function () {
             window.location.href = './cart.html';
-
+    
+    }
+    document.getElementById("ac").onclick = function () {
+            window.location.href = './ac.html';
         }
+    
     </script>
 
 
@@ -669,25 +695,41 @@
                     "address": String(addr)
                 });
 
-               
-                const randomString = [...Array(8)].map(() => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random() * 62)]).join('');
+
+                const randomString0 = [...Array(8)].map(() => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random() * 62)]).join('');
+                let randomString = "#" + randomString0;
                 console.log(randomString);
 
                 const usersRef6 = collection(firestore, "boiUser");
-            const q6 = query(usersRef6, where("gmail", "==", getCookie("boiEmail")));
-            const querySnapshot6 = await getDocs(q6);
-            const userDoc6 = querySnapshot6.docs[0].data();
+                const q6 = query(usersRef6, where("gmail", "==", getCookie("boiEmail")));
+                const querySnapshot6 = await getDocs(q6);
+                const userDoc6 = querySnapshot6.docs[0].data();
 
 
                 const docRef = await addDoc(collection(firestore, "boiOrder"), {
                     orderId: randomString,
                     customerId: String(getCookie("boiEmail")),
-                    orderItems:userDoc6.cart,
+                    orderItems: userDoc6.cart,
                     status: "pending",
                     date: Timestamp.now()
                 });
 
-                alert("Order Submited")
+
+                Swal.fire({
+                    title: `Order Confirmed.
+  Track order?`,
+                    showDenyButton: true,
+
+                    confirmButtonText: "Later",
+                    denyButtonText: `Yes,track`
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+                        Swal.close(); 
+                    } else if (result.isDenied) {
+                        window.location.href = `./order.html?id=${randomString}`;
+                    }
+                });
 
 
 
@@ -697,6 +739,7 @@
 
 
         }
+
 
 
 
@@ -731,7 +774,7 @@
             const querySnapshot6 = await getDocs(q6);
             const userDoc6 = querySnapshot6.docs[0].data();
 
-            console.log(userDoc6);
+
 
 
 

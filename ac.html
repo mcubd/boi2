@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        /* footer only */
+        .footer {
+                width: 100%;
+                height: 3.8rem;
+                background-color: rgb(255, 255, 255);
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                /* Horizontally center the items */
+                align-items: center;
+                box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
+    
+    
+    
+            }
+    
+            #hm,
+            .cartt,#ac {
+                width: 33%;
+                justify-content: center;
+            }
+    
+            .cartt {
+                display: inline-flex;
+                align-items: flex-start;
+                justify-content: center;
+            }
+    
+    
+            #rd {
+                color: rgb(255 255 255);
+                font-weight: 700;
+    
+                background-color: rgb(255 78 99);
+    
+    
+    
+                color: white;
+                font-size: 12px;
+                font-weight: bold;
+                width: 18px;
+                height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                margin-left: -10px;
+                /* Adjusts overlap with the SVG */
+                margin-top: -5px;
+                /* Moves badge upwards */
+                box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+                z-index: 1;
+                /* Ensures the badge is above the SVG */
+    
+    
+            }
+    
+    
+            #hm {
+                opacity: .5;
+                justify-content: center;
+                text-align: center;
+            }
+    
+            #cartt00 {
+                opacity: .5;
+                justify-content: center;
+                text-align: center;
+            }
+    
+            body,
+            html {
+                overflow-x: hidden;
+            }
+    
+      /* footer only */
+    </style>
+
+
+</head>
+<body>
+    <div class="footer">
+
+        <svg id="hm" xmlns="http://www.w3.org/2000/svg" width="18px" height="20px" viewBox="0 0 17.996 20.442">
+            <path
+                d="M48.187,7.823,39.851.182A.7.7,0,0,0,38.9.2L31.03,7.841a.7.7,0,0,0-.211.5V19.311a.694.694,0,0,0,.694.694H37.3A.694.694,0,0,0,38,19.311V14.217h3.242v5.095a.694.694,0,0,0,.694.694h5.789a.694.694,0,0,0,.694-.694V8.335a.7.7,0,0,0-.228-.512ZM47.023,18.617h-4.4V13.522a.694.694,0,0,0-.694-.694H37.3a.694.694,0,0,0-.694.694v5.095H32.2V8.63l7.192-6.98L47.02,8.642v9.975Z"
+                transform="translate(-30.619 0.236)" fill="black" stroke="currentColor" stroke-width="0.4"></path>
+        </svg>
+
+        <div id="cartt00" class="cartt">
+
+            <svg id="cartt0" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                class="text-opacity-100 brightness-0" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11.5 11.67V10.7C11.5 8.45001 13.31 6.24001 15.56 6.03001C18.24 5.77001 20.5 7.88001 20.5 10.51V11.89"
+                    stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path
+                    d="M12.9998 26H18.9998C23.0198 26 23.7398 24.39 23.9498 22.43L24.6998 16.43C24.9698 13.99 24.2698 12 19.9998 12H11.9998C7.72983 12 7.02983 13.99 7.29983 16.43L8.04983 22.43C8.25983 24.39 8.97983 26 12.9998 26Z"
+                    stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path d="M19.4955 16H19.5045" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path d="M12.4945 16H12.5035" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+            <span id="rd">?</span>
+
+
+        </div>
+
+        <svg id="ac" xmlns="http://www.w3.org/2000/svg"   height="32" fill="black" class="bi bi-person" viewBox="0 0 16 16">
+            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+          </svg>
+
+    </div>
+    <h1>ac</h1>
+
+
+
+
+    <script>
+
+        document.getElementById("hm").onclick = function () {
+            window.location.href = './1.html';
+        }
+    
+        document.getElementById("cartt00").onclick = function () {
+            window.location.href = './cart.html';
+    
+    }
+    document.getElementById("ac").onclick = function () {
+            window.location.href = './ac.html';
+        }
+    
+    </script>
+
+
+
+    
+</body>
+</html>
