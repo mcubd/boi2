@@ -693,12 +693,7 @@
                 const userRef = doc(firestore, "boiUser", userDoc.id);
 
 
-                await updateDoc(userRef, {
-                    "number": String(num),
-                    "zila": String(zila),
-                    "address": String(addr),
-                    "cart":[]
-                });
+  
 
 
                 const randomString0 = [...Array(8)].map(() => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random() * 62)]).join('');
@@ -722,7 +717,12 @@
 
 
 
-
+                await updateDoc(userRef, {
+                    "number": String(num),
+                    "zila": String(zila),
+                    "address": String(addr),
+                    "cart":[]
+                });
 
             
 
