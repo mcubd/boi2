@@ -671,6 +671,23 @@
 
         let node = document.createElement('div')
         let time0 = moment(doc1.data().date.seconds * 1000).format('DD/MM/YY')
+
+        let st=doc1.data().status;
+        let acti2 = "";
+      let acti4 = "";
+      let acti3 = "";
+
+       if (st == 2) {
+        acti2 = "active"
+      } else if (st == 3) {
+        acti2 = "active"
+        acti3 = "active"
+      } else if (st == 4) {
+        acti2 = "active"
+        acti3 = "active"
+        acti4 = "active"
+      }
+
         node.innerHTML = `
 
                     <div class="main">
@@ -709,7 +726,7 @@
                         <img src="https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2Fclipart3451037.png?alt=media&token=01680970-6c46-442f-9259-75b4d7508ced"
                             height="30px" alt="">
 
-                        <div class="cheak active">
+                        <div class="cheak    ${acti2}">
                             <svg width="20px" height="20px" viewBox="0 0 24 24" fill="white"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -726,7 +743,7 @@
                         <img src="https://firebasestorage.googleapis.com/v0/b/test2-5bbd8.appspot.com/o/chat%2Fdelivery-truck-truck-svgrepo-com.png?alt=media&token=e8a5fa9c-5785-4580-8271-9bfce7f0db6b"
                             height="30px" alt="">
 
-                        <div class="cheak">
+                        <div class="cheak  ${acti3}">
                             <svg width="20px" height="20px" viewBox="0 0 24 24" fill="white"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -758,7 +775,7 @@
                             </g>
                         </svg>
 
-                        <div class="cheak">
+                        <div class="cheak  ${acti4}">
                             <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
